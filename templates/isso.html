@@ -1,0 +1,8 @@
+    {% if ISSO_SERVER %}
+    <!-- Comment BEGIN -->
+    <div id="isso_thread_div"></div>
+    <script data-isso="{{ ISSO_SERVER }}" src="{{ ISSO_EMBED_JS }}"></script>
+    <section id="isso-thread"></section>    
+    <noscript>Please enable JavaScript to view the <a href="http://posativ.org/isso/">comments powered by Isso.</a></noscript>
+    <!-- Comment END -->
+    {% endif %}
