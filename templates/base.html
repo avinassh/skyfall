@@ -61,13 +61,17 @@
         </div>
         <div class="collapse navbar-collapse navbar-right">
           <ul class="nav navbar-nav">
+            <li {% if page_name == 'archives' %} class="active" {% endif %}><a href="{{ SITEURL }}/archives.html">archives</a></li>
+            <li {% if page_name == 'tags' %} class="active" {% endif %}><a href="{{ SITEURL }}/tags.html">tags</a></li>           
             {% for p in PAGES %}
-            <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+            <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title.lower() }}</a></li>
             {% endfor %}
+            <!--
             {% for p in CATEGORIES %}
             <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
             {% endfor %}
             <li{% if author or tag %} class="active"{% endif %}{% block archclass %}{{ ARCHCLASS }}{% endblock archclass %}><a href="{{ SITEURL }}/tags.html">tags</a></li>
+            -->
           </ul>
         </div>
         <!-- /.navbar-collapse -->
