@@ -1,5 +1,28 @@
     {% extends "base.html" %}
     {% block title %}{{ article.title }} - {{SITENAME}}{% endblock title %}
+
+    {% block meta_tags %}
+    <!-- for Google -->
+    <meta name="author" content="{{ AUTHOR }}" />
+    {% if article.summary %} <meta name="description" content="{{ article.summary }}" /> {% endif %}
+    {% if article.tags %} <meta name="keywords" content="" /> {% endif %}
+
+    <!-- for Facebook -->          
+    <meta property="og:title" content="{{ article.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ SITEURL + '/' + article.url }}" />
+    {% if article.facebookimage %} <meta property="og:image" content="{{ article.facebookimage }}" /> {% endif %}
+    {% if article.summary %} <meta property="og:description" content="{{ article.summary }}" /> {% endif %}
+
+    <!-- for Twitter -->
+    <meta name="twitter:title" content="{{ article.title }}" />
+    {% if article.summary %}
+    <meta name="twitter:description" content="{{ article.summary }}" />
+    <meta name="twitter:card" content="{{ article.summary }}" />
+    {% endif %}
+    {% if article.facebookimage %}<meta name="twitter:image" content="{{ article.facebookimage }}" />{% endif %}
+    {% endblock meta_tags %}
+
     {% block content %}
     <section id="content" class="article content">
       <header>
