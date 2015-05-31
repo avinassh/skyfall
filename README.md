@@ -5,14 +5,16 @@ This is a clean bootstrap theme, a fork of [Nikhil's Theme](https://github.com/g
 You can see this live on [avi.im/blag](http://avi.im/blag).
 
 ## Installation
-Same as standard installation of any pelican themes
+Same as standard installation of any pelican theme.
+
+    pelican-themes -i /path/to/skyfall
 
 ## Settings
 
 This theme supports [Isso Commenting Server](http://posativ.org/isso) (along with Disqus). To enable, your pelican config file should have following two settings:
 
     # Specify where your Isso server is running
-    ISSO_SITE = '//localhost:8080/'
+    ISSO_SERVER = '//localhost:8080/'
     # Specify where is embed.js file, usually, it's your
     # http://isso-server/js/embed.min.js
     ISSO_EMBED_JS = '//localhost:8080/isso/api/js/embed.min.js'
